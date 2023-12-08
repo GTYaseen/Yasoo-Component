@@ -11,8 +11,8 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 
-function IconButton({ icon, size }) {
-  let fontSize;
+function IconButton({ icon, size, type, ...props }) {
+  let fontSize, color;
 
   if (size === "small") {
     fontSize = "13px";
@@ -21,27 +21,34 @@ function IconButton({ icon, size }) {
   } else if (size === "large") {
     fontSize = "22px";
   }
+  if (type === "primary") {
+    color = "#FFFFFF";
+  } else if (type === "secondary") {
+    color = "#ff1f1f";
+  } else {
+    color = "#000000";
+  }
 
   if (icon === "search") {
-    return <IoIosSearch style={{ fontSize: fontSize }} />;
+    return <IoIosSearch style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "outLineHeart") {
-    return <FaRegHeart style={{ fontSize: fontSize }} />;
+    return <FaRegHeart style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "fillLineHeart") {
-    return <FaHeart style={{ fontSize: fontSize }} />;
+    return <FaHeart style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "MicroPhone") {
-    return <AiFillAudio style={{ fontSize: fontSize }} />;
+    return <AiFillAudio style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "DisConnect") {
-    return <AiFillApi style={{ fontSize: fontSize }} />;
+    return <AiFillApi style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "Clock") {
-    return <AiFillClockCircle style={{ fontSize: fontSize }} />;
+    return <AiFillClockCircle style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "Trash") {
-    return <AiFillDelete style={{ fontSize: fontSize }} />;
+    return <AiFillDelete style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "FaceBook") {
-    return <AiFillFacebook style={{ fontSize: fontSize }} />;
+    return <AiFillFacebook style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "instagram") {
-    return <AiFillInstagram style={{ fontSize: fontSize }} />;
+    return <AiFillInstagram style={{ fontSize: fontSize, color: color }} />;
   } else if (icon === "folder") {
-    return <AiFillFolderOpen style={{ fontSize: fontSize }} />;
+    return <AiFillFolderOpen style={{ fontSize: fontSize, color: color }} />;
   }
 }
 

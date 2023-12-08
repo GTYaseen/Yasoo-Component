@@ -1,7 +1,7 @@
 import React from "react";
 import "./button.css";
 
-function Button({ children, type, size }) {
+function Button({ children, type, size, ...props }) {
   let width, height, fontSize;
 
   if (size === "small") {
@@ -25,11 +25,9 @@ function Button({ children, type, size }) {
   };
 
   return (
-    <div>
-      <button className={type} style={buttonStyle}>
-        {children}
-      </button>
-    </div>
+    <button className={type} style={buttonStyle}>
+      {children}
+    </button>
   );
 }
 
