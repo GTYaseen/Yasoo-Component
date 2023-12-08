@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import styles from "./iconButton.module.css";
 import {
   AiFillAudio,
   AiFillApi,
@@ -11,7 +12,7 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 
-function IconButton({ icon, size, type, ...props }) {
+function IconButton({ icon, size, type }) {
   let fontSize, color;
 
   if (size === "small") {
@@ -50,6 +51,27 @@ function IconButton({ icon, size, type, ...props }) {
   } else if (icon === "folder") {
     return <AiFillFolderOpen style={{ fontSize: fontSize, color: color }} />;
   }
+  // return (
+  //   <div>
+  //     {icon === "instagram" ? (
+  //       <span
+  //         className={
+  //           size === "large"
+  //             ? styles.large
+  //             : size === "small"
+  //             ? styles.small
+  //             : styles.medium
+  //         }
+  //       >
+  //         <AiFillInstagram
+  //           className={type === "secondary" ? styles.secondary : styles.primary}
+  //         />
+  //       </span>
+  //     ) : (
+  //       <div></div>
+  //     )}
+  //   </div>
+  // );
 }
 
 export default IconButton;

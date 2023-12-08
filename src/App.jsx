@@ -21,10 +21,9 @@ function App() {
         <Input placeholder="hello"/>
         <div className="flex">
          <Button type={'default'} size={"small"}>press me</Button>
-         <Button type={'primary'}size={"small"}>Button<IconButton icon={"Trash"}/></Button>
-         <Button type={'secondary'}size={"small"}><IconButton icon={"search"} size={"large"}/>Button</Button>
+         <Button type={'primary'}size={"medium"}>Button<IconButton icon={"Trash"}/></Button>
+         <Button type={'secondary'}size={"large"}><IconButton icon={"search"} size={"large"}/>Button</Button>
         </div>
-        <IconButton icon={"instagram"} size={"large"} type={"primary"}/>
       </Container>
     </>
   )
