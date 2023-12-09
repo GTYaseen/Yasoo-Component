@@ -1,10 +1,11 @@
-import React from 'react'
-import './container.css'
-function Container({children , width , ...props}) {
-
+import React from "react";
+import "./container.css";
+function Container({ children, width, ...props }) {
   return (
-    <div className='container' style={{maxWidth:{width}}}>{children}</div>
-  )
+    <div className="container" style={{ maxWidth: width }}>
+      {children}
+    </div>
+  );
 }
 
-export default Container
+export default Container;

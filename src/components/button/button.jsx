@@ -1,13 +1,13 @@
 import React from "react";
 import "./button.css";
 
-function Button({ children, type, size, ...props }) {
+export const Button = ({ children, type, size,onClick, ...props }) => {
   let width, height, fontSize;
 
   if (size === "small") {
     width = "50px";
     height = "20px";
-    fontSize = "10px"; // Adjusted font size for better visibility
+    fontSize = "10px";
   } else if (size === "medium") {
     width = "80px";
     height = "30px";
@@ -24,11 +24,23 @@ function Button({ children, type, size, ...props }) {
     fontSize: fontSize,
   };
 
-  return (
-    <button className={type} style={buttonStyle}>
-      {children}
-    </button>
-  );
-}
-
-export default Button;
+  if (type === "primary") {
+    return (
+      <button className="primary" style={buttonStyle}>
+        {children}
+      </button>
+    );
+  } else if (type === "secondary") {
+    return (
+      <button className="secondary" style={buttonStyle}>
+        {children}
+      </button>
+    );
+  } else {
+    return (
+      <button className="default" style={buttonStyle} onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
+};
