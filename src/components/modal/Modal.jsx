@@ -1,6 +1,6 @@
 import React from "react";
 import "./modal.css";
-import { CgCloseR } from "react-icons/cg";
+
 
 export const Modal = ({ children, open, onOk, onCancel, title, ...props }) => {
   const modalStyle = {

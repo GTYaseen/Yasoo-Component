@@ -21,6 +21,7 @@ function App() {
   };
   const handleCancel = () => {
     setOpen(false);
+    console.log("Clicked cancel button");
   };
   const columns = [
     {
