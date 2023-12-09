@@ -1,7 +1,6 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import styles from "./iconButton.module.css";
 import {
   AiFillAudio,
   AiFillApi,
@@ -11,6 +10,20 @@ import {
   AiFillFolderOpen,
   AiFillInstagram,
 } from "react-icons/ai";
+import PropTypes from 'prop-types';
+
+const iconComponents = {
+  search: <IoIosSearch />,
+  outLineHeart: <FaRegHeart />,
+  fillLineHeart: <FaHeart />,
+  MicroPhone: <AiFillAudio />,
+  DisConnect: <AiFillApi />,
+  Clock: <AiFillClockCircle />,
+  Trash: <AiFillDelete />,
+  FaceBook: <AiFillFacebook />,
+  instagram: <AiFillInstagram />,
+  folder: <AiFillFolderOpen />,
+};
 
 function IconButton({ icon, size, type }) {
   let fontSize, color;
@@ -22,56 +35,18 @@ function IconButton({ icon, size, type }) {
   } else if (size === "large") {
     fontSize = "22px";
   }
-  if (type === "primary") {
-    color = "#FFFFFF";
-  } else if (type === "secondary") {
-    color = "#ff1f1f";
-  } else {
-    color = "#000000";
-  }
 
-  if (icon === "search") {
-    return <IoIosSearch style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "outLineHeart") {
-    return <FaRegHeart style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "fillLineHeart") {
-    return <FaHeart style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "MicroPhone") {
-    return <AiFillAudio style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "DisConnect") {
-    return <AiFillApi style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "Clock") {
-    return <AiFillClockCircle style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "Trash") {
-    return <AiFillDelete style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "FaceBook") {
-    return <AiFillFacebook style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "instagram") {
-    return <AiFillInstagram style={{ fontSize: fontSize, color: color }} />;
-  } else if (icon === "folder") {
-    return <AiFillFolderOpen style={{ fontSize: fontSize, color: color }} />;
-  }
-  // return (
-  //   <div>
-  //     {icon === "instagram" ? (
-  //       <span
-  //         className={
-  //           size === "large"
-  //             ? styles.large
-  //             : size === "small"
-  //             ? styles.small
-  //             : styles.medium
-  //         }
-  //       >
-  //         <AiFillInstagram
-  //           className={type === "secondary" ? styles.secondary : styles.primary}
-  //         />
-  //       </span>
-  //     ) : (
-  //       <div></div>
-  //     )}
-  //   </div>
-  // );
+  color = type === "secondary" ? "#ff1f1f" : type === "primary" ? "#FFFFFFF" : "#000000";
+
+  return React.cloneElement(iconComponents[icon], {
+    style: { fontSize, color },
+  });
 }
+
+IconButton.propTypes = {
+  icon: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  type: PropTypes.oneOf(['primary', 'secondary']),
+};
 
 export default IconButton;

@@ -7,7 +7,9 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal-header h3{
+.modal-header p{
+  font-size: 38px;
+  font-weight: bold;
   font-family: sans-serif;
 }
 .modal-header button{
@@ -50,9 +52,9 @@
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   color: #0d172a;
-  width: 60px;
-  height: 27px;
-  font-size: 12px;
+  width: 80px;
+  height: 42px;
+  font-size: 20px;
   margin-top: 0;
   margin-bottom: 0;
   display: flex;

@@ -8,14 +8,14 @@ export const Button = ({ children, type, size,onClick, ...props }) => {
     width = "50px";
     height = "20px";
     fontSize = "10px";
-  } else if (size === "medium") {
-    width = "80px";
-    height = "30px";
-    fontSize = "14px";
   } else if (size === "large") {
     width = "100px";
     height = "40px";
     fontSize = "16px";
+  } else {
+    width = "80px";
+    height = "30px";
+    fontSize = "14px";
   }
 
   let buttonStyle = {
